@@ -436,7 +436,8 @@ class Dataset(torch.utils.data.Dataset):
         self.args = args
 
         if args.reuse_temp_file:
-            pickle_file = open(os.path.join(args.temp_file_dir, get_name('ex_list')), 'rb')
+#            pickle_file = open(os.path.join(args.temp_file_dir, get_name('ex_list')), 'rb')
+            pickle_file = open(os.path.join(args.temp_file_dir, ('ex_list')), 'rb')
             self.ex_list = pickle.load(pickle_file)
             # self.ex_list = self.ex_list[len(self.ex_list) // 2:]
             pickle_file.close()
